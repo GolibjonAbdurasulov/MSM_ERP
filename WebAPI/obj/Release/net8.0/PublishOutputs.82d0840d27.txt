@@ -1,0 +1,14 @@
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.exe
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\appsettings.Development.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\appsettings.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\DateBase\tasks.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\DateBase\users.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.deps.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.runtimeconfig.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.pdb
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\Microsoft.AspNetCore.OpenApi.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\Microsoft.OpenApi.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\Swashbuckle.AspNetCore.SwaggerUI.dll

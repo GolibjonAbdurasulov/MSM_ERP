@@ -33,3 +33,4 @@ C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Debug\net8.0\refint\WebA
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Debug\net8.0\WebAPI.pdb
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Debug\net8.0\WebAPI.genruntimeconfig.cache
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Debug\net8.0\ref\WebAPI.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Debug\net8.0\WebAPI.sourcelink.json
