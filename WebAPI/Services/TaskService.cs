@@ -6,8 +6,23 @@ namespace WebAPI.Services;
 
 public class TaskService : ITaskService
 {
-    private readonly string _filePath = "C:\\Users\\Developr\\RiderProjects\\MSM_ERP_Test\\WebAPI\\DateBase\\tasks.json";
+    private readonly string _filePath;
 
+    public TaskService()
+    {
+        // Loyiha ishga tushgan asosiy (Root) papkani oladi
+        string rootPath = AppDomain.CurrentDomain.BaseDirectory;
+
+        // Root ichidagi "DateBase" papkasiga yo'l hosil qiladi
+        _filePath = Path.Combine(rootPath, "DateBase", "tasks.json");
+
+        // Agar "DateBase" papkasi yo'q bo'lsa, uni yaratadi
+        string directory = Path.GetDirectoryName(_filePath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+    }
     private List<ServiceTask> GetAllTasksFromFile()
     {
         if (!File.Exists(_filePath)) return new List<ServiceTask>();

@@ -6,8 +6,29 @@ namespace WebAPI.Services;
 
 public class UserService : IUserService
 {
-    private readonly string _filePath = @"C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\DateBase\users.json";
-    // Fayldan hamma foydalanuvchilarni o'qish (Private Helper)
+    private readonly string _filePath;
+
+    public UserService()
+    {
+        // Loyiha ishga tushgan asosiy (Root) papkani aniqlaymiz
+        string rootPath = AppDomain.CurrentDomain.BaseDirectory;
+        
+        // Dinamik yo'lni shakllantiramiz: Root/DateBase/users.json
+        _filePath = Path.Combine(rootPath, "DateBase", "users.json");
+
+        // Agar papka mavjud bo'lmasa, uni yaratamiz (xatolikni oldini olish uchun)
+        string directory = Path.GetDirectoryName(_filePath);
+        if (!Directory.Exists(directory))
+        {
+            Directory.CreateDirectory(directory);
+        }
+
+        // Agar fayl mavjud bo'lmasa, bo'sh JSON list yaratib qo'yamiz []
+        if (!File.Exists(_filePath))
+        {
+            File.WriteAllText(_filePath, "[]");
+        }
+    }
     public List<User> GetAllUsersFromFile()
     {
         if (!File.Exists(_filePath)) return new List<User>();
