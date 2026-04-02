@@ -1,0 +1,26 @@
+[
+  {
+    "Id": 1,
+    "Title": "Stanok datchigini almashtirish kerak",
+    "Description": "Zavod 3-sex, 2-stanokda datchik almashtirish kerak",
+    "PublisherId": 2,
+    "Status": 1,
+    "CreatedDate": "2024-03-15T10:30:00"
+  },
+  {
+    "Id": 2,
+    "Title": "Stanok kabelini yangilash kerak",
+    "Description": "Stanok ichidagi kabellar yaraqsiz holga kelgan ularni almashtirish kerak",
+    "PublisherId": 1,
+    "Status": 2,
+    "CreatedDate": "2026-04-02T09:15:09.8815542+05:00"
+  },
+  {
+    "Id": 4,
+    "Title": "Qozon datchiklarini tekshirish.",
+    "Description": "D blokdagi mis eritish qozonlarini harorat datchiklarini tekshirish",
+    "PublisherId": 1,
+    "Status": 3,
+    "CreatedDate": "2026-04-02T09:40:14.8607598+05:00"
+  }
+]

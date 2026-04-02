@@ -1,0 +1,16 @@
+[
+  {
+    "Id": 1,
+    "FullName": "Admin User",
+    "Role": 2,
+    "Email": "admin@msm.uz",
+    "Password": "1111"
+  },
+  {
+    "Id": 2,
+    "FullName": "Publisher User",
+    "Role": 1,
+    "Email": "user@msm.uz",
+    "Password": "1111"
+  }
+]
