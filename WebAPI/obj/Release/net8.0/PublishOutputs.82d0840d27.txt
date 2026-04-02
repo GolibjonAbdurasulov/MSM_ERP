@@ -1,6 +1,7 @@
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.exe
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\appsettings.Development.json
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\appsettings.json
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\DateBase\services.json
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\DateBase\tasks.json
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\DateBase\users.json
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\publish_folder\WebAPI.dll

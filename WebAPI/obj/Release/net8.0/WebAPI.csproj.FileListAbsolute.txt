@@ -34,3 +34,4 @@ C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Release\net8.0\refint\We
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Release\net8.0\WebAPI.pdb
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Release\net8.0\WebAPI.genruntimeconfig.cache
 C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\obj\Release\net8.0\ref\WebAPI.dll
+C:\Users\Developr\RiderProjects\MSM_ERP_Test\WebAPI\bin\Release\net8.0\DateBase\services.json
