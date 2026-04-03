@@ -21,10 +21,15 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", policy =>
     {
-        policy.WithOrigins("http://localhost:8090", "http://localhost:5173") // Front-end portlaringizni yozing
+        policy.WithOrigins(
+                "http://localhost:8090", 
+                "http://localhost:8080",
+                "http://172.16.23.101:8080", // Rahbar kompyuteri ochadigan manzil
+                "http://172.16.23.101:8090"  // Agar front-end shu IP da bo'lsa
+            ) 
             .AllowAnyMethod()
             .AllowAnyHeader()
-            .AllowCredentials(); // SignalR ulanishi uchun bu SHART
+            .AllowCredentials(); // SignalR uchun bu shart
     });
 });
 
