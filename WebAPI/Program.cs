@@ -1,4 +1,5 @@
 using WebAPI.Auth;
+using WebAPI.Hubs;
 using WebAPI.Interfaces;
 using WebAPI.Services;
 
@@ -15,6 +16,19 @@ builder.Services.AddCors(options =>
     });
 });
 
+// 1. CORS xizmatini to'g'ri sozlash
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.WithOrigins("http://localhost:8090", "http://localhost:5173") // Front-end portlaringizni yozing
+            .AllowAnyMethod()
+            .AllowAnyHeader()
+            .AllowCredentials(); // SignalR ulanishi uchun bu SHART
+    });
+});
+
+builder.Services.AddSignalR();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -29,15 +43,13 @@ var app = builder.Build();
 // 2. CORS ni ishga tushirish (App qismiga, MapControllers dan oldin bo'lishi shart)
 app.UseCors("AllowAll");
 
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
 
-// AGAR siz localda ishlayotgan bo'lsangiz va HTTPS muammo bersa, 
-// vaqtincha buni o'chirib turing yoki https:// emas http:// dan foydalaning
-// app.UseHttpsRedirection(); 
+
+app.MapHub<MonitoringHub>("/monitoringHub");
+
 
 app.MapControllers();
 

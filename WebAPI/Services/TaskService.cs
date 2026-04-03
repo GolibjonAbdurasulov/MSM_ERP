@@ -1,5 +1,7 @@
 using System.Text.Json;
+using Microsoft.AspNetCore.SignalR;
 using WebAPI.Entities;
+using WebAPI.Hubs;
 using WebAPI.Interfaces;
 
 namespace WebAPI.Services;
@@ -7,16 +9,13 @@ namespace WebAPI.Services;
 public class TaskService : ITaskService
 {
     private readonly string _filePath;
-
-    public TaskService()
+    private readonly IHubContext<MonitoringHub> _hubContext;
+    public TaskService(IHubContext<MonitoringHub> hubContext)
     {
-        // Loyiha ishga tushgan asosiy (Root) papkani oladi
+        _hubContext = hubContext;
+        
         string rootPath = AppDomain.CurrentDomain.BaseDirectory;
-
-        // Root ichidagi "DateBase" papkasiga yo'l hosil qiladi
         _filePath = Path.Combine(rootPath, "DateBase", "tasks.json");
-
-        // Agar "DateBase" papkasi yo'q bo'lsa, uni yaratadi
         string directory = Path.GetDirectoryName(_filePath);
         if (!Directory.Exists(directory))
         {
@@ -41,9 +40,12 @@ public class TaskService : ITaskService
     {
         var tasks = GetAllTasksFromFile();
         task.Id = tasks.Count > 0 ? tasks.Max(t => t.Id) + 1 : 1;
-        task.CreatedDate = DateTime.Now; // Avtomatik vaqtni belgilash
+        task.CreatedDate = DateTime.Now;
         tasks.Add(task);
         SaveAllTasksToFile(tasks);
+
+        _hubContext.Clients.All.SendAsync("UpdateTasks"); 
+        
         return task;
     }
 
@@ -56,12 +58,12 @@ public class TaskService : ITaskService
             existingTask.Title = task.Title;
             existingTask.Description = task.Description;
             existingTask.Status = task.Status;
-            existingTask.PublisherId = task.PublisherId;
             SaveAllTasksToFile(tasks);
+
+            _hubContext.Clients.All.SendAsync("UpdateTasks");
         }
         return existingTask;
     }
-
     public ServiceTask GetTaskById(long id)
     {
         return GetAllTasksFromFile().FirstOrDefault(t => t.Id == id);

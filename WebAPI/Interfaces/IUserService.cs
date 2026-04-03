@@ -9,4 +9,5 @@ public interface IUserService
     public User DeleteUser(User user);
     public User GetUserByEmail(string email);
     public User GetUserById(long id);
+    public List<User> GetAllUsersFromFile();
 }

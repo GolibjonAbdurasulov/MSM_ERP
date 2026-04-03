@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Entities;
+using WebAPI.Interfaces;
 using WebAPI.Services;
 
 namespace WebAPI.Controllers
@@ -8,11 +9,11 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class ServiceTaskController : ControllerBase
     {
-        private readonly TaskService _taskService;
+        private readonly ITaskService _taskService;
 
-        public ServiceTaskController()
+        public ServiceTaskController(ITaskService taskService)
         {
-            _taskService = new TaskService();
+            _taskService = taskService;
         }
 
         [HttpGet("getall")]

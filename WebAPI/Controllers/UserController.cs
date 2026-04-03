@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using WebAPI.Entities;
+using WebAPI.Interfaces;
 using WebAPI.Services;
 
 namespace WebAPI.Controllers
@@ -8,11 +9,11 @@ namespace WebAPI.Controllers
     [Route("api/[controller]")]
     public class UserController : ControllerBase
     {
-        private readonly UserService _userService;
+        private readonly IUserService _userService;
 
-        public UserController()
+        public UserController(IUserService userService)
         {
-            _userService = new UserService(); // Hozircha DI qilmaymiz, test uchun yetarli
+            _userService = userService; // Hozircha DI qilmaymiz, test uchun yetarli
         }
 
         [HttpGet("getall")]
